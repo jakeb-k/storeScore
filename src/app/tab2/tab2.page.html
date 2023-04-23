@@ -9,7 +9,7 @@
 </ion-header>
 
 <ion-content>
- <ion-title size="x-large">{{user1.name}} Info </ion-title>
+ <ion-title size="x-large"><i>{{user1.name}}</i> Info </ion-title>
  <div id="accInfo">
   <h4>Average Rating: {{user1.avgRating}}</h4>
   <h4>Review Count: {{user1.reviewCount}}</h4>
@@ -19,7 +19,12 @@
 <ion-list>
   <ion-card *ngFor="let r of reviews">
     <ion-card-header>
-      <ion-card-title>{{r.restaurant}} {{r.rating}} <ion-icon name="star-outline"></ion-icon> {{r.date}}</ion-card-title>
+      <ion-card-title>
+        <div id="reviewTitle">
+          <div>{{r.restaurant}} {{r.rating}} <ion-icon name="star-outline"></ion-icon></div>
+          <div> {{r.date}}</div>
+        </div>
+      </ion-card-title>
       <ion-card-subtitle>{{r.user}}</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
