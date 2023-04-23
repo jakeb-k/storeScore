@@ -24,3 +24,21 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+
+
+#headerBar {
+    font-size: xxx-large;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    padding:0% 10% 0% 10%; 
+    
+}
+ion-header {
+    margin-bottom: 30px; 
+}
+ #headerBar ion-title{
+    font-size: 28px; 
+    margin-left:20%; 
+}
