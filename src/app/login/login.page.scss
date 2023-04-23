@@ -1,0 +1,39 @@
+ion-checkbox {
+    --size: 16px;
+    --background-checked: black;
+}
+
+ion-checkbox::part(container) {
+    border-radius: 6px;
+    border: 2px solid black;
+}
+
+ion-button {
+    padding: 10px;
+}
+
+h2 {
+    margin-left: 15px;
+}
+
+#loginCount {
+    padding-left: 10px;
+}
+
+ion-content {
+    margin-left: 20px;
+}
+
+ion-list {
+    margin-left: 15px;
+}
+
+#check {
+    display: flex;
+    flex-direction: row;
+}
+
+#check ion-label {
+    padding-top: 17px;
+    margin-left: -30px;
+}
