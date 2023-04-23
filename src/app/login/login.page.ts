@@ -12,11 +12,21 @@ export class LoginPage implements OnInit {
 
   constructor(private router: Router) {}
 
-  login() {
-    this.router.navigateByUrl('/account/' + this.username);
+  
+  ngOnInit() {
+    localStorage.removeItem('username'); 
   }
 
-  ngOnInit() {
+  login() {
+    if(this.username != "") {
+    this.router.navigateByUrl('/account/' + this.username);
+    localStorage.setItem('username', this.username); 
+    localStorage.setItem('isName','true'); 
+    } else {
+      localStorage.setItem('isName', 'false');
+      alert('Please enter a username')
+    }
+    console.log(localStorage.getItem('isName')); 
   }
 
 }

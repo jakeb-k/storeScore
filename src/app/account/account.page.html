@@ -3,7 +3,12 @@
     <div id="headerBar">
       <ion-icon name="home-outline"></ion-icon>
       <ion-title> Store Score</ion-title>
-      <ion-button routerLink="/login"> Login </ion-button>
+      <div *ngIf= "isName; else elseBlock">
+        <ion-button (click)="logout()"> Logout </ion-button>
+      </div>
+      <ng-template #elseBlock>
+        <ion-button (click)="navToLog()"> Login </ion-button>
+      </ng-template>
     </div>
   </ion-toolbar>
 </ion-header>
