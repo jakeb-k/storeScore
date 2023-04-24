@@ -14,4 +14,9 @@ export class Review {
         this.description = description;
         this.date = date;  
     }
+    addReview(cReviews: [Review], user:string, rating:number, restaurant: string, description:string, date:string){
+        let nReview = new Review(user, rating, restaurant, description, date);
+        cReviews.push(nReview); 
+        return(cReviews); 
+    }
 }

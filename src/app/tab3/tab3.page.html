@@ -19,21 +19,21 @@
   <ion-card>
     <ion-card-content>
     <ion-item>
-      <ion-select name="restaurant" placeholder="Select one of the following restaurants">
+      <ion-select name="restaurant" [(ngModel)]="restaurant" placeholder="Select one of the following restaurants">
         <ion-select-option value="Big Poppas Pizza"> Big Poppas Pizza </ion-select-option>
         <ion-select-option value="Tandoori Nights"> Tandoori Nights </ion-select-option>
         <ion-select-option value="Burger Bazaar"> Burger Bazaar </ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-textarea label="Review" labelPlacement="floating" placeholder="Enter your thoughts about the restaurant"></ion-textarea>
+      <ion-textarea [(ngModel)]="description" label="Review" labelPlacement="floating" placeholder="Enter your thoughts about the restaurant"></ion-textarea>
     </ion-item>
     <ion-item>
-      <ion-input label="Rating" labelPlacement="floating" step="0.1" type="number" min="0" max="5" placeholder="Please enter a number between 1 & 5"></ion-input>
+      <ion-input [(ngModel)]="rating" label="Rating" labelPlacement="floating" step="0.1" type="number" min="0" max="5" placeholder="Please enter a number between 1 & 5"></ion-input>
     </ion-item>
     </ion-card-content>
   </ion-card>
-  <ion-button> Submit </ion-button>
+  <ion-button (click)="add()"> Submit </ion-button>
   </div>
 
 </ion-content>

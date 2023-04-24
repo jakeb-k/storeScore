@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { LocalStorageService } from '../local-storage.service';
 
 @Component({
   selector: 'app-tab3',
@@ -9,13 +10,41 @@ import { Router } from '@angular/router';
 export class Tab3Page {
   isName = Boolean(false); 
   checkName = localStorage.getItem('username')!;
+  rating = Number();
+  description = String(""); 
+  restaurant = String(""); 
+  
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, public LocalStorage: LocalStorageService) {}
   ngOnInit(){
     this.checker(this.checkName); 
     console.log(this.checkName); 
   }
-  
+  add(){
+    let newId = Number(); 
+    var newReview = {
+    id: newId,
+    date: new Date().toDateString(), 
+    name:this.checkName,
+    rating: this.rating, 
+    description: this.description,
+    restaurant: this.restaurant
+  }
+    let currentReviews = JSON.parse(sessionStorage.getItem("reviews")!); 
+    let incoming = []; 
+    for (let i in currentReviews) {
+      incoming.push(currentReviews[i])
+      newId = Number(i); 
+    }
+    newReview.id = newId + 1; 
+    incoming.push(newReview)  
+    console.log(incoming); 
+    
+    sessionStorage.setItem("reviews", JSON.stringify(incoming));
+  }
+  get(){
+
+  }
   checker(checkName:String) {
     if(checkName != ""){
       this.isName = true;
