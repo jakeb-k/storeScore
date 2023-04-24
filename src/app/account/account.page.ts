@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user.model';
-import { Review } from '../models/review.model';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -12,9 +11,6 @@ export class AccountPage implements OnInit {
   isName = Boolean(); 
   username = String("")
   user1 = new User("ReviewLeaver", "password", 4.5, 3)
-  reviews = [new Review("ReviewLeaver", 3.7, "Big Poppas Pizza","Pretty good pizza, not the best, but pretty good", new Date().toDateString()),
-  new Review("ReviewLeaver",4.1, "Burger Bazaar","Some of the best burgers I've ever had, bin was full however",new Date("4/07/23").toDateString()),          
-  new Review("ReviewLeaver", 4.8, "Tandoori Nights", "Great little indian place with good food and atmosphere",new Date("3/21/23").toDateString())]
   
   nReviews = JSON.parse(sessionStorage.getItem("reviews")!); 
   
@@ -22,21 +18,22 @@ export class AccountPage implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router) {}
   ngOnInit(){
     this.username = this.route.snapshot.paramMap.get('username')!;
-    
-    this.checker(localStorage.getItem('isName')!); 
-    console.log(this.nReviews); 
-    console.log(this.isName);
+    this.checker(localStorage.getItem('username')!); 
+
   }
   ionViewWillEnter(){
     this.username = localStorage.getItem("username")!;
-    this.checker(localStorage.getItem('isName')!); 
+    this.checker(this.username); 
     this.nReviews = JSON.parse(sessionStorage.getItem("reviews")!); 
+    if(this.isName == false){
+      location.reload(); 
+    }
   }
   checker(checkName:String) {
-    if(checkName == ""){
-      this.isName = false;
+    if(checkName != "" && checkName != null){
+      this.isName = true;
     }else {
-      this.isName = true; 
+      this.isName = false; 
     }
   }
   tester(){

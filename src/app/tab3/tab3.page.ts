@@ -17,12 +17,11 @@ export class Tab3Page {
 
   constructor(private router: Router, public LocalStorage: LocalStorageService) {}
   ngOnInit(){
-    this.checker(this.checkName); 
-    console.log(this.checkName); 
+    this.checker(this.checkName);  
   }
   ionViewWillEnter(){
-    this.checker(this.checkName); 
     this.checkName = localStorage.getItem('username')!;
+    this.checker(this.checkName); 
   }
   add(){
     let newId = Number(); 
@@ -34,22 +33,30 @@ export class Tab3Page {
     description: this.description,
     restaurant: this.restaurant
   }
-    let currentReviews = JSON.parse(sessionStorage.getItem("reviews")!); 
-    let incoming = []; 
-    for (let i in currentReviews) {
-      incoming.push(currentReviews[i])
-      newId = Number(i); 
+    if(this.checkName != null) {
+      if(newReview.rating <= 5) {
+        let currentReviews = JSON.parse(sessionStorage.getItem("reviews")!); 
+        let incoming = []; 
+        for (let i in currentReviews) {
+          incoming.push(currentReviews[i])
+          newId = Number(i); 
+        }
+        newReview.id = newId + 1; 
+        incoming.push(newReview)  
+        sessionStorage.setItem("reviews", JSON.stringify(incoming));
+        alert("New review by "+ this.checkName + " has been uploaded!"); 
+      } else {
+        alert("Enter a rating between 0 and 5"); 
+      }
+    } else {
+      alert("Please sign in to leave a review"); 
     }
-    newReview.id = newId + 1; 
-    incoming.push(newReview)  
-    sessionStorage.setItem("reviews", JSON.stringify(incoming));
-    alert("New review by "+ this.checkName + " has been uploaded!"); 
   }
   get(){
 
   }
   checker(checkName:String) {
-    if(checkName != ""){
+    if(checkName != "" && checkName != null){
       this.isName = true;
     }else {
       this.isName = false; 

@@ -2,7 +2,7 @@
   <ion-toolbar>
     <div id="headerBar">
       <ion-icon name="home-outline"></ion-icon>
-      <ion-title> Store Score</ion-title>
+      <h4> Store Score</h4>
       <div *ngIf="isName; else elseBlock">
         <ion-button (click)="logout()"> Logout </ion-button>
       </div>
@@ -15,12 +15,12 @@
 
 <ion-content [fullscreen]="true">
   <div id="reviewBox">
-  <ion-title><i>Write a Review</i></ion-title>
+  <h1><i>Write a Review</i></h1>
   <ion-card>
     <ion-card-content>
     <ion-item>
       <ion-select name="restaurant" [(ngModel)]="restaurant" placeholder="Select one of the following restaurants">
-        <ion-select-option value="Big Poppas Pizza"> Big Poppas Pizza </ion-select-option>
+        <ion-select-option value="Big Poppa Pizza"> Big Poppa Pizza </ion-select-option>
         <ion-select-option value="Tandoori Nights"> Tandoori Nights </ion-select-option>
         <ion-select-option value="Burger Bazaar"> Burger Bazaar </ion-select-option>
       </ion-select>

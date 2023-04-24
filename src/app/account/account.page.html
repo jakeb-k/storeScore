@@ -1,8 +1,8 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <div id="headerBar">
       <ion-icon name="home-outline"></ion-icon>
-      <ion-title> Store Score</ion-title>
+      <h4> Store Score</h4>
       <div *ngIf= "isName; else elseBlock">
         <ion-button (click)="logout()"> Logout </ion-button>
       </div>
@@ -14,7 +14,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-title size="x-large"><i>{{username}}'s</i> Info </ion-title>
+  <h1 size="x-large"><i>{{username}}'s</i> Info </h1>
   <div id="accInfo">
     <h4>Average Rating: {{user1.avgRating}}</h4>
     <h4>Review Count: {{user1.reviewCount}}</h4>

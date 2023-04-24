@@ -2,7 +2,7 @@
     <ion-toolbar>
       <div id="headerBar">
         <ion-icon name="home-outline"></ion-icon>
-        <ion-title> Store Score</ion-title>
+        <h4> Store Score</h4>
         <div *ngIf= "isName; else elseBlock"> 
           <ion-button (click)="logout()"> Logout </ion-button>
         </div>
@@ -28,7 +28,7 @@
               {{r.description}}
             </ion-card-content>
           
-            <ion-button fill="clear">Leave a Review</ion-button>
+            <ion-button (click)="restNav(r.name)" fill="clear">View Ratings</ion-button>
             
           </ion-card>
     </ion-list> 
