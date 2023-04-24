@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
 export class TabsPage {
   username = localStorage.getItem('username')
   constructor() {}
+  
 
 }

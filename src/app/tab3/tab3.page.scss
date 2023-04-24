@@ -1,14 +1,15 @@
 #reviewBox ion-title{
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 ion-card {
-    width:650px; 
-    padding:15px; 
+    margin-top:20px; 
+    width: 100%; 
+    padding:5px; 
     
 }
 #reviewBox ion-button {
     margin-top: 30px;
-    width:200px; 
+    width:50%; 
 }
 #reviewBox {
     display: flex;

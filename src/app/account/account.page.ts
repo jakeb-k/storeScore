@@ -15,21 +15,33 @@ export class AccountPage implements OnInit {
   reviews = [new Review("ReviewLeaver", 3.7, "Big Poppas Pizza","Pretty good pizza, not the best, but pretty good", new Date().toDateString()),
   new Review("ReviewLeaver",4.1, "Burger Bazaar","Some of the best burgers I've ever had, bin was full however",new Date("4/07/23").toDateString()),          
   new Review("ReviewLeaver", 4.8, "Tandoori Nights", "Great little indian place with good food and atmosphere",new Date("3/21/23").toDateString())]
+  
+  nReviews = JSON.parse(sessionStorage.getItem("reviews")!); 
+  
+  
   constructor(private route: ActivatedRoute, private router: Router) {}
   ngOnInit(){
     this.username = this.route.snapshot.paramMap.get('username')!;
     
-      this.checker(localStorage.getItem('isName')!); 
-    
+    this.checker(localStorage.getItem('isName')!); 
+    console.log(this.nReviews); 
     console.log(this.isName);
   }
-  
+  ionViewWillEnter(){
+    this.username = localStorage.getItem("username")!;
+    this.checker(localStorage.getItem('isName')!); 
+    this.nReviews = JSON.parse(sessionStorage.getItem("reviews")!); 
+  }
   checker(checkName:String) {
     if(checkName == ""){
       this.isName = false;
     }else {
       this.isName = true; 
     }
+  }
+  tester(){
+    this.nReviews = JSON.parse(sessionStorage.getItem("reviews")!); 
+    console.log(this.nReviews); 
   }
    logout(){
     this.router.navigateByUrl('/login');

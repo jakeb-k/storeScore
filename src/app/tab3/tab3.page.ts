@@ -9,7 +9,7 @@ import { LocalStorageService } from '../local-storage.service';
 })
 export class Tab3Page {
   isName = Boolean(false); 
-  checkName = localStorage.getItem('username')!;
+  checkName = String(); 
   rating = Number();
   description = String(""); 
   restaurant = String(""); 
@@ -19,6 +19,10 @@ export class Tab3Page {
   ngOnInit(){
     this.checker(this.checkName); 
     console.log(this.checkName); 
+  }
+  ionViewWillEnter(){
+    this.checker(this.checkName); 
+    this.checkName = localStorage.getItem('username')!;
   }
   add(){
     let newId = Number(); 
@@ -38,9 +42,8 @@ export class Tab3Page {
     }
     newReview.id = newId + 1; 
     incoming.push(newReview)  
-    console.log(incoming); 
-    
     sessionStorage.setItem("reviews", JSON.stringify(incoming));
+    alert("New review by "+ this.checkName + " has been uploaded!"); 
   }
   get(){
 

@@ -28,17 +28,12 @@
 
 
 #headerBar {
-    font-size: xxx-large;
+    font-size: 24px;
     display: flex;
     flex-direction: row;
-    justify-content: right;
-    padding:0% 10% 0% 10%; 
-    
+    justify-content: space-between;
+    height:50px; 
 }
-ion-header {
-    margin-bottom: 30px; 
-}
- #headerBar ion-title{
-    font-size: 28px; 
-    margin-left:20%; 
+ion-content {
+    margin-top: 30px;
 }
