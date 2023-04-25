@@ -33,7 +33,14 @@
     flex-direction: row;
     justify-content: space-between;
     height:50px; 
+    padding:5px; 
+}
+#headerBar ion-icon{
+    margin-top:15px; 
 }
 ion-content {
     margin-top: 30px;
+}
+#login ion-button {
+    height:40px; 
 }

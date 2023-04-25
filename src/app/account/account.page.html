@@ -3,7 +3,7 @@
     <div id="headerBar">
       <ion-icon name="home-outline"></ion-icon>
       <h4> Store Score</h4>
-      <div *ngIf= "isName; else elseBlock">
+      <div id="login" *ngIf= "isName; else elseBlock">
         <ion-button (click)="logout()"> Logout </ion-button>
       </div>
       <ng-template #elseBlock>
@@ -20,12 +20,12 @@
     <h4>Review Count: {{reviewCount}}</h4>
   </div>
   <h1>My Reviews</h1>
-  <ion-list>
+  <ion-list *ngIf= "isPresent; else elseBlock2">
     <ion-card *ngFor="let r of restReviews">
       <ion-card-header>
         <ion-card-title>
           <div id="reviewTitle">
-            <div>{{r['restaurant']}} {{r['rating']}} <ion-icon name="star-outline"></ion-icon></div>
+            <div>{{r['restaurant']}} <br> {{r['rating']}} <ion-icon name="star-outline"></ion-icon></div>
             <div> {{r['date']}}</div>
           </div>
         </ion-card-title>
@@ -37,4 +37,8 @@
       <ion-button (click)="navToEdit(r['id'])" fill="clear">Edit</ion-button>
     </ion-card>
   </ion-list>
+  <ng-template #elseBlock2>
+    <h1> You currently have no submitted reviews </h1>
+    <ion-button routerLink="/tab3" fill="clear">Create a Review</ion-button>
+  </ng-template>
 </ion-content>

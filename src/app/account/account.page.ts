@@ -9,6 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AccountPage implements OnInit {
   isName = Boolean(); 
+  isPresent = Boolean(); 
   username = String("")
   user1 = new User("ReviewLeaver", "password", 4.5, 3)
   restReviews = [];
@@ -45,7 +46,12 @@ export class AccountPage implements OnInit {
     }
     this.reviewCount = this.restReviews.length; 
     this.avgRating = this.total / this.reviewCount; 
-    console.log(this.total); 
+    if (this.restReviews[0] != undefined) {
+      this.isPresent = true; 
+    } else {
+      this.isPresent = false; 
+    }
+    console.log(this.restReviews[0]); 
   }
   checker(checkName:String) {
     if(checkName != "" && checkName != null){

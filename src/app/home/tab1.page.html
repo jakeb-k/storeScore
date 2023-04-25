@@ -3,7 +3,7 @@
       <div id="headerBar">
         <ion-icon name="home-outline"></ion-icon>
         <h4> Store Score</h4>
-        <div *ngIf= "isName; else elseBlock"> 
+        <div id="login" *ngIf= "isName; else elseBlock"> 
           <ion-button (click)="logout()"> Logout </ion-button>
         </div>
         <ng-template #elseBlock>

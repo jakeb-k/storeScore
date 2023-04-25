@@ -14,6 +14,7 @@ export class Tab3Page {
   description = String(""); 
   restaurant = String(""); 
   date:any; 
+  cDate = new Date(); 
   
 
   constructor(private router: Router, public LocalStorage: LocalStorageService) {}
@@ -25,7 +26,12 @@ export class Tab3Page {
     this.checker(this.checkName); 
   }
   add(){
-    console.log(this.date); 
+     
+    if(this.date == undefined){
+      
+      this.date = this.cDate;
+    }
+    console.log(this.date);
     let newId = Number(); 
     var newReview = {
     id: newId,

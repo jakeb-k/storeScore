@@ -20,3 +20,7 @@ ion-title {
 ion-content h4 {
     margin-left:5%; 
 }
+#accInfo {
+    display: flex;
+    flex-direction: row;
+}

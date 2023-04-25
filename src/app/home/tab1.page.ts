@@ -13,22 +13,20 @@ export class Tab1Page {
   checkName = localStorage.getItem('username')!;
   restReviews = []; 
   nReviews = [];
-
-restaurants = [new Restaurant("Big Poppa Pizza", 4.5, "Tugun", "Big Poppas Pizza is a fun and casual pizza place that's perfect for a night out with friends or family."),
-new Restaurant("Tandoori Nights", 4.8, "Palm Beach", "Tandoori Nights is a cozy restuarant that's perfect for a romantic dinner or a night out with friends."), 
-new Restaurant("Burger Bazaar", 4.6, "Elanora", "Burger Bazaar is a burger lover's paradise, with a menu that will make your mouth water!") ]
+  restaurants = JSON.parse(sessionStorage.getItem('restaurants')!);
   constructor(private router: Router) {}
  
   ngOnInit(){
+    this.restaurants = JSON.parse(sessionStorage.getItem('restaurants')!);
     this.checker(this.checkName); 
     console.log(this.checkName); 
   }
   ionViewWillEnter(){
+     
     this.username = localStorage.getItem("username")!;
-    this.checker(this.username);
-    console.log(this.username);  
-    console.log(this.isName); 
+    this.checker(this.username);  
     this.nReviews = JSON.parse(sessionStorage.getItem("reviews")!); 
+    this.restaurants = JSON.parse(sessionStorage.getItem('restaurants')!);
   }
 
   checker(checkName:String) {

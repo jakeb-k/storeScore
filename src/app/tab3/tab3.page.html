@@ -3,7 +3,7 @@
     <div id="headerBar">
       <ion-icon name="home-outline"></ion-icon>
       <h4> Store Score</h4>
-      <div *ngIf="isName; else elseBlock">
+      <div id="login" *ngIf="isName; else elseBlock">
         <ion-button (click)="logout()"> Logout </ion-button>
       </div>
       <ng-template #elseBlock>
@@ -19,7 +19,7 @@
   <ion-card>
     <ion-card-content>
     <ion-item>
-      <ion-select name="restaurant" [(ngModel)]="restaurant" placeholder="Select one of the following restaurants">
+      <ion-select name="restaurant" [(ngModel)]="restaurant" placeholder="Select restaurant">
         <ion-select-option value="Big Poppa Pizza"> Big Poppa Pizza </ion-select-option>
         <ion-select-option value="Tandoori Nights"> Tandoori Nights </ion-select-option>
         <ion-select-option value="Burger Bazaar"> Burger Bazaar </ion-select-option>
@@ -31,12 +31,12 @@
     <ion-item>
       <ion-input [(ngModel)]="rating" label="Rating" labelPlacement="floating" step="0.1" type="number" min="0" max="5" placeholder="Please enter a number between 1 & 5"></ion-input>
     </ion-item>
+    <p>Date Visited</p>
     <ion-item>
       <ion-datetime-button datetime="datetime"></ion-datetime-button>
-      
       <ion-modal [keepContentsMounted]="true">
         <ng-template>
-          <ion-datetime [(ngModel)]="date" id="datetime"></ion-datetime>
+          <ion-datetime  [(ngModel)]="date" id="datetime"></ion-datetime>
         </ng-template>
       </ion-modal>
     </ion-item>
