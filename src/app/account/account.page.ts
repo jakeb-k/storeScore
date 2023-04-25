@@ -11,9 +11,8 @@ export class AccountPage implements OnInit {
   isName = Boolean(); 
   username = String("")
   user1 = new User("ReviewLeaver", "password", 4.5, 3)
-  
-  nReviews = JSON.parse(sessionStorage.getItem("reviews")!); 
-  
+  restReviews = [];
+  nReviews = [];  
   
   constructor(private route: ActivatedRoute, private router: Router) {}
   ngOnInit(){
@@ -28,6 +27,16 @@ export class AccountPage implements OnInit {
     if(this.isName == false){
       location.reload(); 
     }
+    this.sorter(); 
+  }
+  sorter(){
+    this.restReviews = []; 
+    for(let i in this.nReviews){
+      let testObj = this.nReviews[i];
+      if(testObj['name'] == this.username) {
+        this.restReviews.push(testObj);  
+      }
+    }
   }
   checker(checkName:String) {
     if(checkName != "" && checkName != null){
@@ -35,10 +44,6 @@ export class AccountPage implements OnInit {
     }else {
       this.isName = false; 
     }
-  }
-  tester(){
-    this.nReviews = JSON.parse(sessionStorage.getItem("reviews")!); 
-    console.log(this.nReviews); 
   }
    logout(){
     this.router.navigateByUrl('/login');
@@ -48,6 +53,9 @@ export class AccountPage implements OnInit {
   }
   navToLog(){
     this.router.navigateByUrl('/login');
+  }
+  navToEdit(id: number){
+    this.router.navigateByUrl('/edit/'+ id);
   }
 
 }

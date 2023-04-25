@@ -11,8 +11,8 @@ export class Tab1Page {
   username = String();  
   isName = Boolean(false); 
   checkName = localStorage.getItem('username')!;
-
-  nReviews = JSON.parse(sessionStorage.getItem("reviews")!); 
+  restReviews = []; 
+  nReviews = [];
 
 restaurants = [new Restaurant("Big Poppa Pizza", 4.5, "Tugun", "Big Poppas Pizza is a fun and casual pizza place that's perfect for a night out with friends or family."),
 new Restaurant("Tandoori Nights", 4.8, "Palm Beach", "Tandoori Nights is a cozy restuarant that's perfect for a romantic dinner or a night out with friends."), 
@@ -38,6 +38,7 @@ new Restaurant("Burger Bazaar", 4.6, "Elanora", "Burger Bazaar is a burger lover
       this.isName = false; 
     }
   }
+  
   restNav(restName: any){
     this.router.navigateByUrl('/restaurant/'+ restName); 
     console.log(restName); 
