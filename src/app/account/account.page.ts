@@ -13,6 +13,9 @@ export class AccountPage implements OnInit {
   user1 = new User("ReviewLeaver", "password", 4.5, 3)
   restReviews = [];
   nReviews = [];  
+  avgRating = Number(); 
+  reviewCount = Number(); 
+  total = Number(); 
   
   constructor(private route: ActivatedRoute, private router: Router) {}
   ngOnInit(){
@@ -31,12 +34,18 @@ export class AccountPage implements OnInit {
   }
   sorter(){
     this.restReviews = []; 
+    this.total = 0; 
     for(let i in this.nReviews){
       let testObj = this.nReviews[i];
       if(testObj['name'] == this.username) {
-        this.restReviews.push(testObj);  
+        this.restReviews.push(testObj); 
+        this.total += Number(testObj['rating']);
+        console.log(Number(testObj['rating']));  
       }
     }
+    this.reviewCount = this.restReviews.length; 
+    this.avgRating = this.total / this.reviewCount; 
+    console.log(this.total); 
   }
   checker(checkName:String) {
     if(checkName != "" && checkName != null){

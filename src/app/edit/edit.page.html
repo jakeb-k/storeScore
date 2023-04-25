@@ -1,10 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <div id="headerBar">
-      <div id="back">
-        <ion-back-button (click)="saveAlert()"></ion-back-button>
-        <ion-icon name="home-outline"></ion-icon>
-      </div>
+      <ion-back-button (click)="saveAlert()"></ion-back-button>
       <h4> Store Score</h4>
       <div *ngIf="isName; else elseBlock">
         <ion-button (click)="logout()"> Logout </ion-button>

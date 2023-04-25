@@ -13,6 +13,7 @@ export class Tab3Page {
   rating = Number();
   description = String(""); 
   restaurant = String(""); 
+  date:any; 
   
 
   constructor(private router: Router, public LocalStorage: LocalStorageService) {}
@@ -24,17 +25,18 @@ export class Tab3Page {
     this.checker(this.checkName); 
   }
   add(){
+    console.log(this.date); 
     let newId = Number(); 
     var newReview = {
     id: newId,
-    date: new Date().toDateString(), 
+    date: new Date(String(this.date)).toDateString(), 
     name:this.checkName,
     rating: this.rating, 
     description: this.description,
     restaurant: this.restaurant
   }
     if(this.checkName != null) {
-      if(newReview.rating <= 5) {
+      if(newReview.rating <= 5 && newReview.rating > 0 && newReview.restaurant != undefined && newReview.description != undefined) {
         let currentReviews = JSON.parse(sessionStorage.getItem("reviews")!); 
         let incoming = []; 
         for (let i in currentReviews) {
@@ -44,9 +46,11 @@ export class Tab3Page {
         newReview.id = newId + 1; 
         incoming.push(newReview)  
         sessionStorage.setItem("reviews", JSON.stringify(incoming));
-        alert("New review by "+ this.checkName + " has been uploaded!"); 
+        alert("New review by "+ this.checkName + " has been uploaded!");
+        this.rating = Number();
+        this.description = ""; 
       } else {
-        alert("Enter a rating between 0 and 5"); 
+        alert("Ensure fields have been filled with valid information"); 
       }
     } else {
       alert("Please sign in to leave a review"); 

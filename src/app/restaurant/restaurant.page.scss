@@ -4,6 +4,9 @@
     justify-content: flex-start;
     width:700px; 
 }
+#restHeader * {
+    padding:5px; 
+}
 ion-title {
     font-size:large; 
 
@@ -13,4 +16,7 @@ ion-title {
     flex-direction: row;
     justify-content: space-between;
     font-size: medium;
+}
+ion-content h4 {
+    margin-left:5%; 
 }

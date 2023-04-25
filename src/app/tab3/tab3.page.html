@@ -31,6 +31,15 @@
     <ion-item>
       <ion-input [(ngModel)]="rating" label="Rating" labelPlacement="floating" step="0.1" type="number" min="0" max="5" placeholder="Please enter a number between 1 & 5"></ion-input>
     </ion-item>
+    <ion-item>
+      <ion-datetime-button datetime="datetime"></ion-datetime-button>
+      
+      <ion-modal [keepContentsMounted]="true">
+        <ng-template>
+          <ion-datetime [(ngModel)]="date" id="datetime"></ion-datetime>
+        </ng-template>
+      </ion-modal>
+    </ion-item>
     </ion-card-content>
   </ion-card>
   <ion-button (click)="add()"> Submit </ion-button>
