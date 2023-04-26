@@ -1,17 +1,16 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <div id="headerBar">
-      <ion-icon name="home-outline"></ion-icon>
       <h4> Store Score</h4>
-      <div id="login" *ngIf="isName; else elseBlock">
-        <ion-button (click)="logout()"> Logout </ion-button>
+      <div id="login" *ngIf="isName; else login">
+        <ion-icon (click)="logout()" name="log-out-outline"></ion-icon>
       </div>
-      <ng-template #elseBlock>
-        <ion-button (click)="navToLog()"> Login </ion-button>
+      <ng-template id="login" #login>
+        <ion-icon (click)="navToLog()" name="log-in-outline"></ion-icon>
       </ng-template>
     </div>
   </ion-toolbar>
-</ion-header>
+</ion-header>>
 
 <ion-content [fullscreen]="true">
   <div id="reviewBox">

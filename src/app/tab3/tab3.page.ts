@@ -28,7 +28,6 @@ export class Tab3Page {
   add(){
      
     if(this.date == undefined){
-      
       this.date = this.cDate;
     }
     console.log(this.date);
@@ -42,7 +41,7 @@ export class Tab3Page {
     restaurant: this.restaurant
   }
     if(this.checkName != null) {
-      if(newReview.rating <= 5 && newReview.rating > 0 && newReview.restaurant != undefined && newReview.description != undefined) {
+      if(newReview.rating <= 5 && newReview.rating > 0 && newReview.restaurant != "" && newReview.description != "") {
         let currentReviews = JSON.parse(sessionStorage.getItem("reviews")!); 
         let incoming = []; 
         for (let i in currentReviews) {

@@ -3,16 +3,9 @@
     height:400px;
     border:1px dashed black; 
     margin: 5% 10% 0% 10%; 
+    margin-bottom:20px; 
 }
 #restList {
     display: flex;
     justify-content: center;
-}
-ion-card{
-    font-size: small;
-    margin: 5px 0px 5px 0px; 
-    width:fit-content;
-}
-ion-card-title {
-    font-size:medium; 
 }

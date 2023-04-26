@@ -1,13 +1,12 @@
 <ion-header [translucent]="true">
     <ion-toolbar>
       <div id="headerBar">
-        <ion-icon name="home-outline"></ion-icon>
         <h4> Store Score</h4>
-        <div id="login" *ngIf= "isName; else elseBlock"> 
-          <ion-button (click)="logout()"> Logout </ion-button>
+        <div id="login" *ngIf="isName; else login">
+          <ion-icon (click)="logout()" name="log-out-outline"></ion-icon>
         </div>
-        <ng-template #elseBlock>
-          <ion-button (click)="navToLog()"> Login </ion-button>
+        <ng-template id="login" #login>
+          <ion-icon (click)="navToLog()" name="log-in-outline"></ion-icon>
         </ng-template>
       </div>
     </ion-toolbar>
@@ -17,18 +16,18 @@
   </div>
   <div id="restList">
     <ion-list>
-        
           <ion-card  *ngFor="let r of restaurants">
-            <ion-card-header>
-              <ion-card-title>{{r.name}} {{r.rating}} <ion-icon name="star-outline"></ion-icon> </ion-card-title>
-              <ion-card-subtitle>{{r.location}}</ion-card-subtitle>
-            </ion-card-header>
-          
-            <ion-card-content>
+            <div id="cardHeader">
+              <h3>{{r.name}} </h3>
+              <div id="subtitle">
+                <p>{{r.location}} <span> {{r.rating}} <ion-icon name="star-outline"></ion-icon> </span>  </p>
+                <ion-button size="small" (click)="restNav(r.name)" fill="clear">View Ratings</ion-button>
+              </div>
+            </div>
+            <div id="cardContent">
               {{r.description}}
-            </ion-card-content>
-          
-            <ion-button (click)="restNav(r.name)" fill="clear">View Ratings</ion-button>
+            </div>
+            
             
           </ion-card>
     </ion-list> 
