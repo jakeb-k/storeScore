@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user.model';
 import { ActivatedRoute, Router } from '@angular/router';
+import { formatNumber } from '@angular/common';
 
 @Component({
   selector: 'app-account',

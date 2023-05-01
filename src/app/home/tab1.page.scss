@@ -45,6 +45,7 @@ ion-card {
 
 }
 
+
 #subtitle p {
     font-size: 14px;
     margin-top: 5px;
@@ -53,13 +54,11 @@ ion-card {
 #cardContent p {
     padding-bottom: 15px;
 }
+#cardContent {
+    margin-left: 10px;
+    margin-top:5px; 
+}
 ion-button {
     text-decoration: underline;
     color: black;
-}
-
-ion-button:hover {
-    background-color: rgba(0, 0, 0, 0.602);
-    color: yellow;
-    transition: 0.2s;
 }

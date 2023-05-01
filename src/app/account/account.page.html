@@ -13,11 +13,15 @@
 </ion-header>
 
 <ion-content>
-  <h1 size="x-large"><i>{{username}}'s</i> Info </h1>
-  <div id="accInfo">
-    <h4>Average Rating: {{avgRating}}</h4>
-    <h4>Review Count: {{reviewCount}}</h4>
-  </div>
+  <ion-card id="userName">
+  <ion-card-header>
+    <h2>{{username}}</h2>
+    </ion-card-header>
+    <div id="accStats">
+      <h6>Average Rating: {{avgRating | number:'1.1-2'}}</h6>
+      <h6>Review Count: {{reviewCount}}</h6>
+    </div>
+  </ion-card>
   <h1>My Reviews</h1>
   <ion-list *ngIf= "isPresent; else elseBlock2">
     <div id="restList">
@@ -37,7 +41,7 @@
         <div id="cardContent">
           {{r['description']}}
         </div>
-        <ion-button class="editButton" (click)="navToEdit(r['id'])" fill="clear">Edit</ion-button>
+        <ion-button class="editButton" color="warning"  shape="round" (click)="navToEdit(r['id'])" ><u>EDIT</u></ion-button>
       </ion-card>
     </div>
   </ion-list>

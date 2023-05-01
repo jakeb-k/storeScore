@@ -29,13 +29,14 @@
 
 #headerBar {
     font-size: 24px;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     height: 55px;
     padding: 5px;
-    margin-left: 5px;
+    margin: 5px;
+    margin-bottom:0; 
     
 }
 #headerBar ion-icon{
@@ -55,6 +56,10 @@
     height:40px; 
 }
 
-* {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+.editButton {
+    height:38px; 
+    width:97%;
+    align-self: center;
+    
 }

@@ -29,3 +29,12 @@ ion-item {
 h1 {
     text-align: center;
 }
+ion-select {
+    display:flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%; 
+}
+ion-select-icon {
+    float:right; 
+}
