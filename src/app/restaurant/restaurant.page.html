@@ -1,30 +1,31 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header [translucent]="true">
+  <ion-toolbar color="warning">
     <div id="restHeader">
       <ion-back-button></ion-back-button>
-      <h4> {{uName}} </h4>
+      <p> {{uName}} ({{reviewCount}}) {{avgRating}} <ion-icon name="star-outline"></ion-icon></p>
     </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <h4><i>{{uName}} Reviews</i> </h4>
-  <div id="accInfo">
-    <h4>Average Rating: {{avgRating}}</h4>
-    <h4>Review Count: {{reviewCount}}</h4>
-  </div>
+  <div id="restList">
   <ion-card *ngFor="let r of restReviews">
-    <ion-card-header>
-      <ion-card-title>
-        <div id="reviewTitle">
-          <div>{{r['restaurant']}} {{r['rating']}} <ion-icon name="star-outline"></ion-icon></div>
-          <div> {{r['date']}}</div>
-        </div>
-      </ion-card-title>
-      <ion-card-subtitle>{{r['name']}}</ion-card-subtitle>
-    </ion-card-header>
-    <ion-card-content>
+    <div id="cardHeader">
+      <div>
+        <h5>
+          {{r['name']}}  
+        </h5>
+      </div>
+        <p> {{r['restaurant']}}</p>
+    </div>
+    <div id="subtitle">
+      <h5>{{r['rating']}} <ion-icon name="star-outline"></ion-icon></h5>
+      <p> {{r['date']}}</p>
+    </div>
+    <div id="cardContent">
       {{r['description']}}
-    </ion-card-content>
+    </div> 
   </ion-card>
+  </div>
 </ion-content>
+

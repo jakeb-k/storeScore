@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="warning">
     <div id="headerBar">
       <h4> Store Score</h4>
       <div id="login" *ngIf="isName; else login">
@@ -13,35 +13,33 @@
 </ion-header>>
 
 <ion-content [fullscreen]="true">
-  <div id="reviewBox">
   <h1><i>Write a Review</i></h1>
-  <ion-card>
-    <ion-card-content>
+  <div id="reviewBox">
+  
     <ion-item>
-      <ion-select name="restaurant" [(ngModel)]="restaurant" placeholder="Select restaurant">
+      <ion-select name="restaurant" [(ngModel)]="restaurant" placeholder="Select restaurant" color="warning">
         <ion-select-option value="Big Poppa Pizza"> Big Poppa Pizza </ion-select-option>
         <ion-select-option value="Tandoori Nights"> Tandoori Nights </ion-select-option>
         <ion-select-option value="Burger Bazaar"> Burger Bazaar </ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-textarea [(ngModel)]="description" label="Review" labelPlacement="floating" placeholder="Enter your thoughts about the restaurant"></ion-textarea>
+      <ion-textarea color="warning" [(ngModel)]="description"  color="warning" label="Review" labelPlacement="floating" placeholder="Enter your thoughts about the restaurant" ></ion-textarea>
     </ion-item>
     <ion-item>
-      <ion-input [(ngModel)]="rating" label="Rating" labelPlacement="floating" step="0.1" type="number" min="0" max="5" placeholder="Please enter a number between 1 & 5"></ion-input>
+      <ion-input color="warning" [(ngModel)]="rating" color="warning" label="Rating" labelPlacement="floating" step="0.1" type="number" min="0" max="5" placeholder="Please enter a number between 1 & 5"></ion-input>
     </ion-item>
     <p>Date Visited</p>
     <ion-item>
-      <ion-datetime-button datetime="datetime"></ion-datetime-button>
+      <ion-datetime-button color="warning" datetime="datetime"></ion-datetime-button>
       <ion-modal [keepContentsMounted]="true">
         <ng-template>
           <ion-datetime  [(ngModel)]="date" id="datetime"></ion-datetime>
         </ng-template>
       </ion-modal>
     </ion-item>
-    </ion-card-content>
-  </ion-card>
-  <ion-button (click)="add()"> Submit </ion-button>
+    
+  <ion-button color="warning" (click)="add()"> Submit </ion-button>
   </div>
 
 </ion-content>

@@ -19,7 +19,7 @@ export class Tab1Page {
   ngOnInit(){
     this.restaurants = JSON.parse(sessionStorage.getItem('restaurants')!);
     this.checker(this.checkName); 
-    console.log(this.checkName); 
+    console.log(this.restaurants); 
   }
   ionViewWillEnter(){
      

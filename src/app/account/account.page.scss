@@ -14,3 +14,57 @@ ion-content h1, h4 {
     font-size:medium; 
 }
 
+ion-content h4 {
+    margin-left: 5%;
+}
+
+
+ion-card {
+    color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+#cardHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: -15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#subtitle {
+    margin-top: -15px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#subtitle p {
+    margin-left: 20px;
+    margin-top: 17px;
+}
+
+#cardContent {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+ion-button {
+    text-decoration: underline;
+    color: black;
+    align-self:center;
+    width:100%; 
+    margin:0;
+    padding:10px; 
+}
+
+ion-button:hover {
+    background-color: black;
+    color: yellow;
+    transition: 0.2s;
+}

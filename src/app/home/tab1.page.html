@@ -1,5 +1,5 @@
-<ion-header [translucent]="true">
-    <ion-toolbar>
+<ion-header [translucent]="false">
+    <ion-toolbar color="warning">
       <div id="headerBar">
         <h4> Store Score</h4>
         <div id="login" *ngIf="isName; else login">
@@ -18,9 +18,9 @@
     <ion-list>
           <ion-card  *ngFor="let r of restaurants">
             <div id="cardHeader">
-              <h3>{{r.name}} </h3>
+              <h3>{{r.name}} <span> {{r.rating}} <ion-icon name="star-outline"></ion-icon> </span> </h3>
               <div id="subtitle">
-                <p>{{r.location}} <span> {{r.rating}} <ion-icon name="star-outline"></ion-icon> </span>  </p>
+                <p>{{r.location}}   </p>
                 <ion-button size="small" (click)="restNav(r.name)" fill="clear">View Ratings</ion-button>
               </div>
             </div>

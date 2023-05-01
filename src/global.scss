@@ -33,9 +33,10 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    height:55px; 
-    padding:5px; 
-    margin-left:5px; 
+    height: 55px;
+    padding: 5px;
+    margin-left: 5px;
+    
 }
 #headerBar ion-icon{
     padding:3.5px;
@@ -53,42 +54,7 @@
 #login ion-button {
     height:40px; 
 }
-ion-card {
-    font-size: small;
-    width: 100%;
-    box-shadow: none;
-    border-bottom: 1px solid grey;
-    margin-left: 0px;
-    margin-top: 0px;
-    padding-bottom:10px; 
-    border-radius: 0%;
-}
 
-#cardHeader {
-    color:black; 
+* {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin-bottom:0px; 
-    margin-top:-20px; 
-}
-#cardHeader h3 {
-    margin-left:10px; 
-}
-#subtitle {
-    display:flex; 
-    flex-direction: row;
-    justify-content: space-between;
-    margin-left:10px; 
-    height:30px;
-}
-#subtitle ion-button {
-    padding:0;
-    margin:0; 
-    
-}
-#subtitle p {
-    font-size:14px; 
-    margin-top:5px;
-}
-#cardContent p{
-    padding-bottom:15px; 
 }

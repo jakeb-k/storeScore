@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="warning">
     <div id="headerBar">
       <h4> Store Score</h4>
       <div id="login" *ngIf="isName; else login">
@@ -20,21 +20,26 @@
   </div>
   <h1>My Reviews</h1>
   <ion-list *ngIf= "isPresent; else elseBlock2">
-    <ion-card *ngFor="let r of restReviews">
-      <ion-card-header>
-        <ion-card-title>
-          <div id="reviewTitle">
-            <div>{{r['restaurant']}} <br> {{r['rating']}} <ion-icon name="star-outline"></ion-icon></div>
-            <div> {{r['date']}}</div>
+    <div id="restList">
+      <ion-card *ngFor="let r of restReviews">
+        <div id="cardHeader">
+          <div>
+            <h5>
+              {{r['name']}}
+            </h5>
           </div>
-        </ion-card-title>
-        <ion-card-subtitle>{{r['name']}}</ion-card-subtitle>
-      </ion-card-header>
-      <ion-card-content>
-        {{r['description']}}
-      </ion-card-content>
-      <ion-button (click)="navToEdit(r['id'])" fill="clear">Edit</ion-button>
-    </ion-card>
+          <p> {{r['restaurant']}}</p>
+        </div>
+        <div id="subtitle">
+          <h5>{{r['rating']}} <ion-icon name="star-outline"></ion-icon></h5>
+          <p> {{r['date']}}</p>
+        </div>
+        <div id="cardContent">
+          {{r['description']}}
+        </div>
+        <ion-button class="editButton" (click)="navToEdit(r['id'])" fill="clear">Edit</ion-button>
+      </ion-card>
+    </div>
   </ion-list>
   <ng-template #elseBlock2>
     <h1> You currently have no submitted reviews </h1>

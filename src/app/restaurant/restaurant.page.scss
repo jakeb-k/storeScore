@@ -4,12 +4,16 @@
     justify-content: flex-start;
     width:700px; 
 }
-#restHeader * {
-    padding:5px; 
-}
+
 ion-title {
     font-size:large; 
 
+}
+#restHeader p {
+    margin-left:10px; 
+}
+ion-back-button {
+    font-size:small; 
 }
 #reviewTitle {
     display: flex;
@@ -23,4 +27,28 @@ ion-content h4 {
 #accInfo {
     display: flex;
     flex-direction: row;
+}
+ion-card{
+    color:black; 
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding:10px; 
+}
+
+#cardHeader {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width:100%;
+    margin-top:-15px; 
+}
+#subtitle {
+    margin-top:-15px; 
+    width:100%; 
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+#subtitle p{
+    margin-left:20px; 
+    margin-top:17px; 
 }
