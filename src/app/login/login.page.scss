@@ -1,39 +1,36 @@
 ion-checkbox {
-    --size: 16px;
-    --background-checked: black;
+    --size: 20px;
+    --checkbox-background-checked: yellow;
 }
 
 ion-checkbox::part(container) {
     border-radius: 6px;
-    border: 2px solid black;
+    border: 2px solid yellow;
 }
-
 ion-button {
     padding: 10px;
+    align-self: center;
+    width:95%; 
 }
 
 h2 {
     margin-left: 15px;
 }
-
-#loginCount {
-    padding-left: 10px;
-}
-
-ion-content {
-    margin-left: 20px;
-}
-
 ion-list {
-    margin-left: 15px;
+    width:90%;
+    float: left;
 }
-
 #check {
     display: flex;
     flex-direction: row;
+    height: min-content;
 }
 
 #check ion-label {
-    padding-top: 17px;
-    margin-left: -30px;
+    margin-top: 15px;
+    margin-left: -10px;
+}
+
+#check ion-button {
+    margin-right: 5px;
 }

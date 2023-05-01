@@ -1,6 +1,9 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="false">
   <ion-toolbar color="warning">
-    <ion-title>Welcome</ion-title>
+    <div id="headerBar">
+
+      <h4> Welcome </h4>
+      </div>
   </ion-toolbar>
 </ion-header>
 
@@ -20,7 +23,7 @@
     </div>
   </ion-item>
 </ion-list>
-<ion-button (click)="login()" shape="large" size="round" color="success"> LOGIN <ion-icon name="log-in"></ion-icon>
+<ion-button color="warning" (click)="login()" shape="large"> LOGIN 
 </ion-button>
 </ion-content>
 
