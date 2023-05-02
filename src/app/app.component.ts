@@ -20,7 +20,7 @@ export class AppComponent {
     rating: 4.3,
     restaurant: "Tandoori Nights",
     description: "amazing garlic naan bread, and decent butter chicken" ,
-    date: new Date("3/21/23").toDateString(),
+    date: new Date("3/1/23").toDateString(),
   },{
     id: 2,
     name: "Tester",
@@ -31,11 +31,35 @@ export class AppComponent {
   },
   {
     id: 3,
-    name: "PizzaDat455",
+    name: "PizzaGuy23",
     rating: 5,
     restaurant: "Big Poppa Pizza",
-    description: "I always love a piece of dat pizza" ,
+    description: "I always love a piece of pizza from here" ,
     date: new Date().toDateString()
+  },
+  {
+    id: 4,
+    name: "Jakey",
+    rating: 3.9,
+    restaurant: "Tandoori Nights",
+    description: "great food, but dining area was kind of dirty" ,
+    date: new Date("3/9/23").toDateString(),
+  },
+  {
+    id: 5,
+    name: "Jakey",
+    rating: 4.4,
+    restaurant: "Tandoori Nights",
+    description: "2nd time here, area was much cleaner and food just as amazing" ,
+    date: new Date("3/15/23").toDateString(),
+  },
+  {
+    id: 6,
+    name: "Jakey",
+    rating: 0.5,
+    restaurant: "Burger Bazaar",
+    description: "DO NOT GO HERE!, had to wait for over an hour for soggy fries and burgers, confronted manager about and he DID NOT CARE AT ALL, and told me there was nothing he could do because I already ate everything. DO NOT GO HERE!" ,
+    date: new Date("3/27/23").toDateString(),
   }];
 
   restaurants = [new Restaurant("Big Poppa Pizza", 4.5, "Tugun", "Big Poppas Pizza is a fun and casual pizza place that's perfect for a night out with friends or family."),
