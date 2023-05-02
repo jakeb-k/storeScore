@@ -54,6 +54,13 @@ export class AccountPage implements OnInit {
     }
     console.log(this.restReviews[0]); 
   }
+  delete(id: String){
+    for(let i in this.restReviews) {
+      if(id == this.restReviews[i]['id']) {
+        this.restReviews.splice(Number(i), 1);
+      }
+    }
+  }
   checker(checkName:String) {
     if(checkName != "" && checkName != null){
       this.isName = true;

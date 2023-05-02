@@ -71,3 +71,12 @@ ion-card {
     padding-left: 10px;
     padding-right: 10px;
 }
+.editButton {
+    height: 38px;
+    width: 48%;
+    align-self:self-start; 
+
+}
+.editButton:hover {
+    text-decoration: underline;
+}

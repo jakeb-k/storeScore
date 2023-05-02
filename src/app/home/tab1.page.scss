@@ -59,6 +59,9 @@ ion-card {
     margin-top:5px; 
 }
 ion-button {
-    text-decoration: underline;
+   
     color: black;
+}
+ion-button:hover {
+    text-decoration: underline;
 }
